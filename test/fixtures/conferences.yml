@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  meeting_date: 2020-06-26 11:59:09
+  user_id: 
+  audio_id: 
+
+two:
+  meeting_date: 2020-06-26 11:59:09
+  user_id: 
+  audio_id: 

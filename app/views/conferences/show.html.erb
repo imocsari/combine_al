@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-sm ">
+      <%= pie_chart @times_of_speak %>
+      <p class="mt-2 text-center">Times of speaking during the conference</p>
+    </div>
+    <div class="col-sm">
+      <%= pie_chart @avarage_participation %>
+      <p class="mt-2 text-center">Avarage participation to the conference by user</p>
+    </div>
+    <div class="col-sm">
+      <%= column_chart @most_and_less_contributors, ytitle: "Contribution time (in seconds)" %>
+      <p class="mt-2 text-center">Less, most contributor to the conference</p>
+    </div>
+  </div>
+</div>
