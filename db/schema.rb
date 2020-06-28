@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2020_06_26_105909) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "audios", force: :cascade do |t|
     t.datetime "start_time"
     t.datetime "end_time"
