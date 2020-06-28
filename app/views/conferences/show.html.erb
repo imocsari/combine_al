@@ -9,8 +9,66 @@
       <p class="mt-2 text-center">Avarage participation to the conference by user</p>
     </div>
     <div class="col-sm">
-      <%= column_chart @most_and_less_contributors, ytitle: "Contribution time (in seconds)" %>
+      <%= pie_chart @most_and_less_contributors, ytitle: "Contribution time (in seconds)" %>
       <p class="mt-2 text-center">Less, most contributor to the conference</p>
     </div>
   </div>
 </div>
+<div class="container text-center">
+  <div class="row mt-5">
+    <div class="col-sm">
+        <table id="report" class="ml-5">
+          <thead>
+            <tr>
+            <% @times_of_speak.each do |time_of_speak| %>
+              <th class="test"><%= time_of_speak.first %></th>
+            <% end%>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+             <% @times_of_speak.each do |time_of_speak| %>
+              <td class="first_name"><%= time_of_speak.second %> times</td>
+             <% end%>
+            </tr>
+          </tbody>
+          </table>
+      </div>
+      <div class="col-sm">
+          <table id="report" class="ml-5">
+            <thead>
+              <tr>
+              <% @avarage_participation.each do |participation| %>
+                <th class="test"><%= participation.first %></th>
+              <% end %>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+               <% @avarage_participation.each do |participation| %>
+                <td class="first_name"><%= participation.second %> seconds</td>
+               <% end%>
+              </tr>
+            </tbody>
+            </table>
+        </div>
+        <div class="col-sm ml-5">
+            <table id="report" class="ml-5 text-center">
+              <thead>
+                <tr>
+                <% @most_and_less_contributors.each do |contribution| %>
+                  <th class="test"><%= contribution.first %></th>
+                <% end%>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                 <% @most_and_less_contributors.each do |contribution| %>
+                  <td class="first_name"><%= contribution.second %> seconds</td>
+                 <% end%>
+                </tr>
+              </tbody>
+              </table>
+          </div>
+    </div>
+  </div>

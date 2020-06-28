@@ -5,6 +5,7 @@ class ConferencesController < ApplicationController
     @times_of_speak = @conference.audios.group(:user_id).count
     @avarage_participation =  get_durations(@conference)
     @most_and_less_contributors = most_and_less_contributors(@conference)
+    @sum_of_contribution = sum_of_contribution(@conference)
   end
 
 
@@ -28,6 +29,14 @@ class ConferencesController < ApplicationController
         user_most_and_less[key] = value.pluck(:duration).inject{ |sum, el| sum + el }
       end
       largest_and_smallest_hash_key(user_most_and_less)
+    end
+
+    def sum_of_contribution(conference)
+      full_sum = {}
+      audio_group_by_user(@conference).each do |key, value|
+        full_sum[key] = value.pluck(:duration).inject{ |sum, el| sum + el }
+      end
+      full_sum
     end
 
     def audio_group_by_user(conference)

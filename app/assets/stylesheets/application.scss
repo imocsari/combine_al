@@ -19,3 +19,18 @@
 
  body {
    background-color: beige; }
+
+td, th {
+    padding: 6px;
+    border: 1px solid black;
+}
+
+th {
+    background-color: #f0eae2;
+    font-weight: bold;
+}
+
+table {
+    border: 1px solid black;
+    border-collapse:separate;
+}
